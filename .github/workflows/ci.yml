@@ -18,6 +18,13 @@ jobs: # то что делает пайплайн
           node-version: '20'
 
       # 3: проверка html с помощью html-proofer
-      - name: check html with html-proofer
-        run: |
-          docker run --rm -v $(pwd):/site instrumentisto/html-proofer:latest /site --disable-external --check-html
+      - name: setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.0'
+
+      - name: install html-proofer
+        run: sudo gem install html-proofer
+
+      - name: check html
+        run: htmlproofer ./ --disable-external --check-html
