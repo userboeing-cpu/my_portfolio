@@ -20,6 +20,5 @@ jobs: # то что делает пайплайн
       # 3: проверка html с помощью html-proofer
       - name: Test with html-proofer
         run: | 
-          npm install -g html-proofer # Устанавливаем утилиту проверки HTML глобально
-          html-proofer ./index.html --disable-external # Проверяем файл index.html
-          # Флаг --disable-external отключает проверку внешних ссылок (чтобы не падало из-за медленного интернета)
+          gem install html-proofer # качаем утилиту 
+          htmlproofer ./index.html --disable-external # чекаем файл index.html
