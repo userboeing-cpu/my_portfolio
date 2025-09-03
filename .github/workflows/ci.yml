@@ -19,7 +19,7 @@ jobs: # то что делает пайплайн
 
       # 3: проверка html с помощью html-profer
       - name: check html links
-        uses: actionshub/html-proofer@main
+        uses: anniehedgpeth/ghaction-html-proofer@v1.0.0
         with:
           directory: "./"
           arguments: "--disable-external --check-html"
