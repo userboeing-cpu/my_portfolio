@@ -26,4 +26,4 @@ jobs: # то что делает пайплайн
 
       - name: Run HTMLProofer
         run: |
-          htmlproofer . --check-html --disable-external --allow-hash-href
+          htmlproofer . --checks html --disable-external --allow-hash-href
