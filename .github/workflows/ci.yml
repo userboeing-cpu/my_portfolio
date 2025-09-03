@@ -19,7 +19,5 @@ jobs: # то что делает пайплайн
 
       # 3: проверка html с помощью html-profer
       - name: check html links
-        uses: anniehedgpeth/ghaction-html-proofer@v1.0.0
-        with:
-          directory: "./"
-          arguments: "--disable-external --check-html"
+        run: | 
+	docker run --rm -v ${{ github.workspace }}:/site ghcr.io/gjtorikian/html-proofer:latest /site --disable-external --check-html
