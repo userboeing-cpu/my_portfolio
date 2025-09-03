@@ -1,0 +1,25 @@
+name: Code Check # название
+
+on: [push, pull_request] # запускать при любом пуше в любую ветку и при создании пулл реквеста
+
+jobs: # то что делает пайплайн
+  check_html: # название задачи
+    runs-on: ubuntu-latest # запуск на ласт версии убунту
+
+    steps: # последовательность шагов
+      # 1: получать код из репозитория
+      - name: Checkout code
+        uses: actions/checkout@v4 # загрузка кода 
+
+      # 2: установка Node.js для проверки
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # 3: проверка html с помощью html-proofer
+      - name: Test with html-proofer
+        run: | 
+          npm install -g html-proofer # Устанавливаем утилиту проверки HTML глобально
+          html-proofer ./index.html --disable-external # Проверяем файл index.html
+          # Флаг --disable-external отключает проверку внешних ссылок (чтобы не падало из-за медленного интернета)
