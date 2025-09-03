@@ -44,15 +44,15 @@ jobs: # то что делает пайплайн
           to: ${{ secrets.TELEGRAM_CHAT_ID }}
           token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           message: |
-            🚀 CI/CD Status
+            🚀 CI/CD Статус
             --------------------------
-            📁 Repository: ${{ github.repository }}
-            🔖 Branch: ${{ github.ref_name }}
-            👤 Author: ${{ github.actor }}
+            📁 Проект: ${{ github.repository }}
+            🔖 Ветка: ${{ github.ref_name }}
+            👤 Автор: ${{ github.actor }}
             --------------------------
-            📊 Status: ${{ job.status }}
-            ✅ Quality Checks: ${{ needs.quality-checks.result }}
+            📊 Статус: ${{ job.status }}
+            ✅ Тесты: ${{ needs.check_html.result }}
             --------------------------
             🔗 View Results: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
-            🌐 Live Site: https://${{ github.repository }}.vercel.app
+            🌐 Live Site: my-portfolio-git-main-egors-projects-ec1924bf.vercel.app
           format: html
