@@ -23,12 +23,19 @@ jobs: # то что делает пайплайн
           sudo apt-get update
           sudo apt-get install -y ruby-full
           sudo gem install html-proofer
-
+      - name: Check file structure
+        run: |
+          echo "Проверяем структуру проекта..."
+          if [ ! -f "index.html" ]; then echo "ERROR: index.html not found!"; exit 1; fi
+          echo "✓ Базовая структура в порядке"
+        
       - name: Run HTMLProofer
         run: |
           htmlproofer . --checks html --disable-external --allow-hash-href
   notify-telegram:
     runs-on: ubuntu-latest
+    needs: check_html
+    if: always() # Всегда запускается, даже если предыдущий job упал
     name: Telegram Notification
     steps:
       - name: Send Telegram notification
