@@ -8,17 +8,18 @@ jobs: # то что делает пайплайн
 
     steps: # последовательность шагов
       # 1: получать код из репозитория
-      - name: Checkout code
+      - name: checkout code
         uses: actions/checkout@v4 # загрузка кода 
 
       # 2: установка Node.js для проверки
-      - name: Setup Node.js
+      - name: setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
 
-      # 3: проверка html с помощью html-proofer
-      - name: Test with html-proofer
-        run: | 
-          gem install html-proofer # качаем утилиту 
-          htmlproofer ./index.html --disable-external # чекаем файл index.html
+      # 3: проверка html с помощью html-profer
+      - name: check html links
+        uses: actionshub/html-proofer@main
+        with:
+          directory: "./"
+          arguments: "--disable-external --check-html"
