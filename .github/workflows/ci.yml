@@ -18,13 +18,12 @@ jobs: # то что делает пайплайн
           node-version: '20'
 
       # 3: проверка html с помощью html-proofer
-      - name: setup Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: '3.0'
+      - name: Setup HTMLProofer
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ruby-full
+          sudo gem install html-proofer
 
-      - name: install html-proofer
-        run: sudo gem install html-proofer
-
-      - name: check html
-        run: htmlproofer --check-html --disable-external .
+      - name: Run HTMLProofer
+        run: |
+          htmlproofer . --check-html --disable-external --allow-hash-href
