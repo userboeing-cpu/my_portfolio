@@ -27,3 +27,25 @@ jobs: # то что делает пайплайн
       - name: Run HTMLProofer
         run: |
           htmlproofer . --checks html --disable-external --allow-hash-href
+  notify-telegram:
+    runs-on: ubuntu-latest
+    name: Telegram Notification
+    steps:
+      - name: Send Telegram notification
+        uses: appleboy/telegram-action@v0.1.0
+        with:
+          to: ${{ secrets.TELEGRAM_CHAT_ID }}
+          token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          message: |
+            🚀 CI/CD Status
+            --------------------------
+            📁 Repository: ${{ github.repository }}
+            🔖 Branch: ${{ github.ref_name }}
+            👤 Author: ${{ github.actor }}
+            --------------------------
+            📊 Status: ${{ job.status }}
+            ✅ Quality Checks: ${{ needs.quality-checks.result }}
+            --------------------------
+            🔗 View Results: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+            🌐 Live Site: https://${{ github.repository }}.vercel.app
+          format: html
