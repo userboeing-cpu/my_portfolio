@@ -27,4 +27,4 @@ jobs: # то что делает пайплайн
         run: sudo gem install html-proofer
 
       - name: check html
-        run: htmlproofer ./ --disable-external --check-html
+        run: htmlproofer ./ --disable-external check-html
