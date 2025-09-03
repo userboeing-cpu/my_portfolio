@@ -18,6 +18,6 @@ jobs: # то что делает пайплайн
           node-version: '20'
 
       # 3: проверка html с помощью html-proofer
-      - name: Test with html-proofer
-        run: | 
-          docker run --rm -v ${{ github.workspace }}:/site ghcr.io/gjtorikian/html-proofer:latest /site --disable-external --check-html
+      - name: check html with html-proofer
+        run: |
+          docker run --rm -v $(pwd):/site instrumentisto/html-proofer:latest /site --disable-external --check-html
