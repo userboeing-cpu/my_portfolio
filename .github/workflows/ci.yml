@@ -8,16 +8,16 @@ jobs: # то что делает пайплайн
 
     steps: # последовательность шагов
       # 1: получать код из репозитория
-      - name: checkout code
+      - name: Checkout code
         uses: actions/checkout@v4 # загрузка кода 
 
       # 2: установка Node.js для проверки
-      - name: setup Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
 
-      # 3: проверка html с помощью html-profer
-      - name: check html links
+      # 3: проверка html с помощью html-proofer
+      - name: Test with html-proofer
         run: | 
-	docker run --rm -v ${{ github.workspace }}:/site ghcr.io/gjtorikian/html-proofer:latest /site --disable-external --check-html
+          docker run --rm -v ${{ github.workspace }}:/site ghcr.io/gjtorikian/html-proofer:latest /site --disable-external --check-html
