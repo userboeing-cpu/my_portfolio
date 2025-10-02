@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Егор | Веб-разработчик & DevOps</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">
+                    <span>👨‍💻</span>
+                    <span>EgorDev</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#about">Обо мне</a></li>
+                    <li><a href="#skills">Навыки</a></li>
+                    <li><a href="#projects">Проекты</a></li>
+                    <li><a href="#contact">Контакты</a></li>
+                </ul>
+                <button class="theme-toggle" id="themeToggle">🌙</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        Привет, я <span class="gradient-text">Егор</span>
+                    </h1>
+                    <p class="hero-subtitle">Веб-разработчик & DevOps-инженер</p>
+                    <p class="hero-description">
+                        Создаю современные веб-приложения и автоматизирую процессы разработки. 
+                        Увлекаюсь IT и постоянно изучаю новые технологии.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary">Мои проекты</a>
+                        <a href="#contact" class="btn btn-secondary">Связаться</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="floating-card card-1">
+                        <span>🚀</span>
+                        <p>CI/CD</p>
+                    </div>
+                    <div class="floating-card card-2">
+                        <span>⚡</span>
+                        <p>DevOps</p>
+                    </div>
+                    <div class="floating-card card-3">
+                        <span>🎯</span>
+                        <p>Web</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">Обо мне</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        Я учусь в 10 классе и активно развиваюсь в IT-сфере. 
+                        Особенно меня увлекает веб-разработка и DevOps-практики.
+                    </p>
+                    <p>
+                        Этот сайт — не просто портфолио, а полноценный проект с автоматизированным 
+                        CI/CD пайплайном, демонстрирующий мои навыки в автоматизации.
+                    </p>
+                    <div class="stats">
+                        <div class="stat">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Автоматизация</span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Мои навыки</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Frontend</h3>
+                    <div class="skill-items">
+                        <span class="skill-tag">HTML5</span>
+                        <span class="skill-tag">CSS3</span>
+                        <span class="skill-tag">JavaScript</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>DevOps</h3>
+                    <div class="skill-items">
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">GitHub Actions</span>
+                        <span class="skill-tag">CI/CD</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Инструменты</h3>
+                    <div class="skill-items">
+                        <span class="skill-tag">Vercel</span>
+                        <span class="skill-tag">Linux</span>
+                        <span class="skill-tag">VS Code</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Мои проекты</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-icon">🚀</div>
+                    <h3>Автоматизированное портфолио</h3>
+                    <p>Сайт с полноценным CI/CD пайплайном, автоматическим тестированием и деплоем</p>
+                    <div class="project-tech">
+                        <span>GitHub Actions</span>
+                        <span>Vercel</span>
+                        <span>HTML/CSS/JS</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://my-portfolio-eta-ten-46.vercel.app/" class="project-link" target="_blank">Посмотреть</a>
+                        <a href="https://github.com/userboeing-cpu/my_portfolio" class="project-link" target="_blank">Исходный код</a>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-icon">🤖</div>
+                    <h3>Telegram CI-бот</h3>
+                    <p>Система уведомлений о результатах сборки в реальном времени</p>
+                    <div class="project-tech">
+                        <span>Telegram API</span>
+                        <span>GitHub Actions</span>
+                        <span>Bash</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://t.me/myproject_ci_bot" class="project-link" target="_blank">Посмотреть</a>
+                        <a href="https://github.com/userboeing-cpu/my_portfolio/blob/main/.github/workflows/ci.yml" class="project-link" target="_blank">Исходный код</a>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-icon">⚡</div>
+                    <h3>DevOps Dashboard</h3>
+                    <p>Панель мониторинга для отслеживания статуса CI/CD пайплайнов</p>
+                    <div class="project-tech">
+                        <span>React</span>
+                        <span>GitHub API</span>
+                        <span>WebSocket</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#projects" class="project-link coming-soon">В разработке</a>
+                        <a href="#projects" class="project-link coming-soon">Скоро</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- секция контактов -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Давайте работать вместе</h2>
+            <p class="contact-subtitle">Всегда открыт для новых проектов и интересных предложений</p>
+            
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">📧</div>
+                    <h3>Email</h3>
+                    <p>f1tane1337.gmail@gmail.com</p>
+                    <a href="mailto:your.f1tane1337@gmail.com" class="contact-link">Написать</a>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">🐙</div>
+                    <h3>GitHub</h3>
+                    <p>github.com/userboeing-cpu</p>
+                    <a href="https://github.com/userboeing-cpu" class="contact-link" target="_blank">Перейти</a>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">✈️</div>
+                    <h3>Telegram</h3>
+                    <p>@userboeing</p>
+                    <a href="https://t.me/userboeing" class="contact-link" target="_blank">Написать</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- нижняя тема вот ета -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <p>© 2025 Егор. Сделано с ❤️ и автоматизацией</p>
+                    <p>Powered by GitHub Actions + Vercel</p>
+                </div>
+                <div class="footer-badge">
+                    <span class="ci-badge">CI/CD</span>
+                    <span class="status-badge">🟢 Online</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
